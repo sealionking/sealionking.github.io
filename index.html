@@ -1,2 +1,448 @@
-hello
-欢迎来到我的gitpages
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SealionKing — 理解世界，而不是改造世界</title>
+    <meta name="description" content="从意识、精神障碍到经济与社会，三本小册子构建理解世界的简洁框架。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        void: '#0a1128',
+                        primary: '#2563eb',
+                        accent: '#f59e0b',
+                        'neon-blue': '#60a5fa',
+                    },
+                    fontFamily: {
+                        display: ['"Noto Serif SC"', 'serif'],
+                        serif: ['"Noto Serif SC"', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+        .preface-content h1 { font-size: 1.5rem; font-weight: 900; margin: 1.5rem 0 1rem; font-family: 'Noto Serif SC', serif; }
+        .preface-content h2 { font-size: 1.25rem; font-weight: 700; margin: 1.25rem 0 0.75rem; font-family: 'Noto Serif SC', serif; }
+        .preface-content h3 { font-size: 1.1rem; font-weight: 700; margin: 1rem 0 0.5rem; }
+        .preface-content p { margin: 0.75rem 0; line-height: 1.85; }
+        .preface-content strong { font-weight: 800; }
+        .preface-content em { font-style: italic; }
+        .preface-content hr { border: none; border-top: 1px solid #d1d5db; margin: 2rem 0; }
+        .preface-content blockquote { border-left: 4px solid #2563eb; padding-left: 1rem; margin: 1rem 0; color: #374151; font-style: italic; }
+        .preface-content br + br { display: none; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-[#0a1128] text-white antialiased">
+
+    <!-- Header Nav -->
+    <header class="sticky top-0 z-50 bg-[#0a1630]/95 backdrop-blur-md border-b border-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="no-underline">
+                    <div class="font-display text-white font-black text-xl lg:text-2xl tracking-wider hover:text-accent transition-colors">
+                        WANGJUEJU.CN
+                    </div>
+                </a>
+                <nav class="flex items-center gap-4 lg:gap-6">
+                    <a href="https://wangjueju.cn/zh-hans/blog" class="text-xs lg:text-sm tracking-tighter font-black text-white/60 hover:text-accent transition-colors uppercase no-underline">Blog</a>
+                    <a href="https://wangjueju.cn/zh-hans/understandingisallyouneed" class="text-xs lg:text-sm tracking-tighter font-black text-white/60 hover:text-accent transition-colors uppercase no-underline">三部曲</a>
+                    <a href="https://github.com/sealionking/wangjuejudotcngen2ai" target="_blank" class="text-xs lg:text-sm tracking-tighter font-black text-white/60 hover:text-accent transition-colors uppercase no-underline">Gen2AI</a>
+                    <a href="https://github.com/sealionking/divola-pub" target="_blank" class="text-xs lg:text-sm tracking-tighter font-black text-white/60 hover:text-accent transition-colors uppercase no-underline">DiVoLa-Pub</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-6 md:pb-32 px-6 overflow-hidden bg-gradient-to-b from-[#0a1128] via-gray-900 to-[#0a1128]">
+        <div class="absolute inset-0">
+            <img src="https://wangjueju.cn/sites/default/files/2025-10/everest-measurement-memorial.jpg" alt="背景" class="object-cover opacity-50 w-full h-full absolute inset-0" />
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0a1128]/70 via-[#0a1128]/40 to-[#0a1128]/70"></div>
+        </div>
+        <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(37,99,235,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.1)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        <div class="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px]"></div>
+        <div class="absolute -bottom-24 -right-24 w-[500px] h-[500px] rounded-full bg-accent/10 blur-[150px]"></div>
+
+        <div class="relative w-full mx-auto max-w-7xl">
+            <div class="relative inline-block">
+                <div class="absolute -inset-16 opacity-15 blur-[120px] rounded-full" style="background-color: #2563eb;"></div>
+                <div class="absolute inset-[-20px] border border-white/5 rounded-full animate-spin-slow pointer-events-none"></div>
+                <div class="absolute inset-[-40px] border border-white/5 rounded-full animate-spin-slow pointer-events-none" style="animation-direction: reverse; animation-duration: 15s;"></div>
+                <div class="relative">
+                    <h1 class="font-display text-4xl md:text-7xl font-bold mb-4 text-white leading-tight">
+                        徒步骑行<br />
+                        写作游吟
+                    </h1>
+                    <h2 class="text-lg md:text-2xl font-light text-gray-300 mb-8 font-display tracking-wide max-w-2xl">
+                        世界那么大，待我去看看
+                    </h2>
+                </div>
+            </div>
+
+            <div class="hidden md:flex mt-12 w-full justify-between">
+                <a href="https://divolog.wangjueju.cn" target="_blank" rel="noopener" class="w-[40%] rounded-xl overflow-hidden border border-neon-blue/30 shadow-2xl transition-all duration-300 hover:border-neon-blue/60 hover:scale-[1.02] no-underline" style="background-image: url('https://wangjueju.cn/divolog_hero.webp'); background-size: cover; background-position: center;">
+                    <div class="w-full h-full bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 min-h-[330px]">
+                        <div class="text-neon-blue font-bold text-3xl leading-tight">DiVoLog</div>
+                        <div class="text-white/90 text-base mt-2">我们的AI开发与应用手记</div>
+                    </div>
+                </a>
+                <div class="w-[30%] bg-gradient-to-r from-gray-800/60 to-gray-900/60 backdrop-blur-sm border border-gray-700/50 rounded-xl flex items-center min-h-[330px]">
+                    <div class="w-full space-y-6 p-4">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                                <span class="text-primary font-bold text-sm">我</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-gray-200 text-lg leading-relaxed italic">
+                                    "在我看来，我只不过像个在海边玩耍的孩子，一不小心就被海浪卷入了海底深渊，无法呼吸，不见光明。"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-neon-blue/20 flex items-center justify-center">
+                                <span class="text-neon-blue font-bold text-sm">AI</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-gray-200 text-lg leading-relaxed italic font-bold underline">
+                                    "在深渊里，首要的不是游向对岸，而是浮出水面。"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="bg-[#f8f6f1] text-black">
+        <!-- 总序 -->
+        <section class="py-12 px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                    <h2 class="font-serif text-2xl font-bold mb-6">重要的是理解世界，而不是改造世界</h2>
+                    <div id="preface-content" class="preface-content prose max-w-none"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 三本书 -->
+        <section class="py-12 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-serif text-xl font-bold mb-6">三部曲</h2>
+                <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
+                    <!-- Book 1: consciousness -->
+                    <a href="https://wangjueju.cn/zh-hans/understandingisallyouneed/consciousness" class="group border-2 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all no-underline text-black block">
+                        <h3 class="font-serif text-lg font-bold group-hover:bg-black group-hover:text-white transition-colors px-1 inline-block">
+                            意识之生命能动性的结构进化范式导论
+                        </h3>
+                        <p class="mt-2 text-sm text-black/60 leading-relaxed">
+                            从生命能动性到意识核心命题，一部关于意识本质的跨学科探索。
+                        </p>
+                        <p class="mt-3 font-mono text-xs text-black/40">7 章</p>
+                    </a>
+
+                    <!-- Book 2: fdamage -->
+                    <a href="https://wangjueju.cn/zh-hans/understandingisallyouneed/fdamage" class="group border-2 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all no-underline text-black block">
+                        <h3 class="font-serif text-lg font-bold group-hover:bg-black group-hover:text-white transition-colors px-1 inline-block">
+                            Fdamage：价格损益因子
+                        </h3>
+                        <p class="mt-2 text-sm text-black/60 leading-relaxed">
+                            让你看清人类经济史与未来——从代谢损伤出发构建组织结构与价格形成的理论框架。
+                        </p>
+                        <p class="mt-3 font-mono text-xs text-black/40">7 章</p>
+                    </a>
+
+                    <!-- Book 3: mental-disorders -->
+                    <a href="https://wangjueju.cn/zh-hans/understandingisallyouneed/mental-disorders" class="group border-2 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all no-underline text-black block">
+                        <h3 class="font-serif text-lg font-bold group-hover:bg-black group-hover:text-white transition-colors px-1 inline-block">
+                            精神障碍之遗传突变发育代谢及社会环境互作原理
+                        </h3>
+                        <p class="mt-2 text-sm text-black/60 leading-relaxed">
+                            从基础生物学到社会结构，系统梳理精神障碍的科学认知与人文反思。
+                        </p>
+                        <p class="mt-3 font-mono text-xs text-black/40">8 章</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 开源项目 -->
+        <section class="py-12 px-4 bg-[#0a1128] text-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="h-px w-8 bg-accent/50"></span>
+                    <span class="text-accent font-mono text-xs tracking-[0.3em] uppercase">Open Source · 开源</span>
+                    <span class="h-px flex-1 bg-white/10"></span>
+                </div>
+                <div class="grid gap-6 sm:grid-cols-2">
+                    <a href="https://github.com/sealionking/wangjuejudotcngen2ai" target="_blank" rel="noopener" class="group border-2 border-white/20 bg-white/5 p-6 rounded-xl hover:border-accent/50 hover:bg-white/10 transition-all no-underline block">
+                        <div class="flex items-center gap-2 mb-3">
+                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <h3 class="font-bold text-lg text-white group-hover:text-accent transition-colors">wangjuejudotcngen2ai</h3>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Gen2AI — 生物计算与AI辅助蛋白质工程平台。集成结构预测、酶活性分析、免疫原性评估等全栈生物计算工具链。
+                        </p>
+                        <span class="inline-block mt-3 font-mono text-xs text-accent/80 group-hover:text-accent transition-colors">GitHub →</span>
+                    </a>
+                    <a href="https://github.com/sealionking/divola-pub" target="_blank" rel="noopener" class="group border-2 border-white/20 bg-white/5 p-6 rounded-xl hover:border-accent/50 hover:bg-white/10 transition-all no-underline block">
+                        <div class="flex items-center gap-2 mb-3">
+                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <h3 class="font-bold text-lg text-white group-hover:text-accent transition-colors">divola-pub</h3>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            DiVoLa-Pub — 万绝居AI辅助学习与出版系统。Markdown驱动的三本书独立阅读器，Neo-Brutalist设计风格。
+                        </p>
+                        <span class="inline-block mt-3 font-mono text-xs text-accent/80 group-hover:text-accent transition-colors">GitHub →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a1128] border-t border-white/10 py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-gray-500 text-sm font-mono">
+                &copy; 2025 SealionKing. 重要的是理解世界，而不是改造世界。
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const prefaceRaw = "**重要的是理解世界，而不是改造世界**\n" +
+"\n" +
+"AI的时代，时代的AI，有了AI我们好像什么都能做了，但是有了AI有好像什么都不需要我们做了。\n" +
+"\n" +
+"关于AI取代各种职位，程序员已死，前端已死，律师已死，财务已死，……总而言之，AI的雄起，大家全都难逃一死，等到世界上最伟大的程序员们开发出来AGI，各行各业全死翘翘了。\n" +
+"\n" +
+"所以我们好像没有什么事情好做的了。\n" +
+"\n" +
+"其实我还蛮喜欢的，至少有AI给我做这个，做那个，就像这样为这几本书做个独立的阅读器，原本要请前端，要请程序员，要请运维，要请编辑，要请美工，……太多太多以前自己不会做的事情。\n" +
+"\n" +
+"现在把AI拖出来，就是任劳任怨的多面手。\n" +
+"\n" +
+"做错了骂他还能给我提供情绪价值。\n" +
+"\n" +
+"现在很多人，大学教授，经济学家，政府官员，政客，思想领袖，男人，女人，老男人，老女人，很多很多，一股忧国忧民的样子，一副X岩松那种日常便秘的表情，在哪里说，\"AI发展不能够让人失业呀！\"\n" +
+"\n" +
+"神经病！哦，不对，这是多种精神障碍的共病。\n" +
+"\n" +
+"技术发展不让人失业？那要这个技术干啥？\n" +
+"\n" +
+"失业什么意思？就是人们的总体劳动时间减少了，毕竟一部分人不工作了嘛。\n" +
+"\n" +
+"多好呀！不要工作，闲着。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"美国最伟大的经济学家之一，把自己炒股整破产的耶鲁大学的教授，我最膜拜的，欧文.肥事儿（Irving Fisher），他在money income后面加了一个，Enjoyable income，就是享受收入。\n" +
+"\n" +
+"这个环节是非常重要的呀！\n" +
+"\n" +
+"如果你有了996福报，有时间赚钱没时间花，那赚钱有什么意义呢？这个工作对你还有意义吗？\n" +
+"\n" +
+"哦，你要养老婆孩子。但是如果你40岁就赚几个亿身价，突发疾病死了，老婆孩子身价都是别人的了。\n" +
+"\n" +
+"所以，工作并不是什么好事情，劳心劳力，赚点money income。\n" +
+"\n" +
+"但这恰恰引出了一个更深层的问题。\n" +
+"\n" +
+"AI替代人，**本来就应该是一件好事情**。\n" +
+"\n" +
+"技术进步让更少的人付出更少的劳动，就能创造更多的财富供全体人类自由发展所用——这不正是经济发展的终极目标吗？\n" +
+"\n" +
+"正如马克思所言，个人的自由发展，是人类自由发展的必要条件。\n" +
+"\n" +
+"你技术发展了不给人自由，还想把人钉住钉在工位上天天享受996福报，把人作为一颗不自由的螺丝，那也太恶毒了吧？不符合马克思主义的基本原理。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"费雪所说的Enjoyable income——享受收入——它不应该只是一个附加项，它应该是终点。当全要素生产率（TFP）提高到极高水平，机器自动驭使机器，人只需要极少地付诸劳动，剩下的时间用来思考、创作、消遣。这才是人类社会该有的\"大一统结局\"。\n" +
+"\n" +
+"可为什么这么多人——从大学教授到政府官员——都在担心\"AI不能让人失业\"？\n" +
+"\n" +
+"他们担心的真的是\"失业\"吗？不是的。技术发展减少劳动时间，这在逻辑上无可指摘。\n" +
+"\n" +
+"**他们真正担心的是：全要素生产力的提高，能不能转化为普遍的、有效的收入保证？**\n" +
+"\n" +
+"更直白地说：他们担心的是**社会制度的再分配能力**。当然，他们担心的是失去工作收入的\"普通人\"如果需要政府和国家提供\"生活保障\"，会摊薄他们好不容易经过考公考编努力获得的优厚\"待遇\"，专家津贴，等等！所以，孙玉银不去修水库挣工分，那要靠村长孙少安养着的话，村长孙少安的口粮不就少了吗？\n" +
+"\n" +
+"傻子，孙少安从手工制砖改为机制砖，一个人就可以养活一村子的人，老婆还能天天去打麻将，跳广场舞。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"如果机器创造的财富被少数人和少数结构截留，大多数人失去工作的同时也失去了收入来源，那技术进步就不再是福祉，而是灾难。这种恐惧不是指向\"被取代的劳动者\"，而是指向**制度的刚性**——指向那种无法被个体意志改变的、系统性的分配格局。\n" +
+"\n" +
+"而这，正是我们这本小册子里要讲的 $F_{damage}$——**价格损益因子**——的核心直觉。\n" +
+"\n" +
+"$F_{damage}$ 衡量的是：在种内结构（$S_s$）和工具水平（$T$）的共同作用下，价格偏离等价交换(我不喜欢等价交换这个概念，因为交换本身天然是不等价的，但是我喜欢自由市场理性交换这个不存在的假设)的程度。当 $T$ 暴涨而 $S_s$ 保持不变时，$F_{damage}$ 不是下降，而是爆炸——因为工具的增量被刚性结构以幂律方式放大为损耗。\n" +
+"\n" +
+"**全要素生产率幻觉，就是这么来的。**\n" +
+"\n" +
+"去年（2025年）有经济学家喊出\"有效需求不足\"，然后又喊要等\"全要素生产率\"的发展抹平\"有效需求不足\"这中间有一段痛苦时间。不过还好，不是喊\"痛苦\"的这些经济学家，他们退休还能被返聘，退休金8000多，返聘待遇不变，自己家的有效需求反而暴增了。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"所以人们担心AI失业，本质上是在担心：\n" +
+"\n" +
+"**我们的 $S_s$（种内结构）够不够柔性，能不能把 $T$（AI带来的生产力爆发）转化为 $W$（个体的实际留存）的提升，而不是让 $W$ 继续被压向 $L$（生存红线）？**\n" +
+"\n" +
+"这次新修的**$F_{damage}$ 动力学函数公式**\n" +
+"\n" +
+"$$F_{damage} = \\\\frac{S_s \\\\cdot T^{\\\\alpha}}{1 - \\\\beta \\\\cdot e^{-\\\\gamma(L - W)}}$$\n" +
+"\n" +
+"如果制度是刚性的、分配是固化的，那么AI越强大，$F_{damage}$ 就越高，底层越痛苦，社会越不稳定。这不是技术的错，这是**结构的错**。\n" +
+"\n" +
+"**更少工作，更多消遣，甚至完全不工作——这不是堕落，这是文明的归宿。** 但前提是：我们必须先把 $F_{damage}$ 降下来，让结构配得上工具。\n" +
+"\n" +
+"<br />\n" +
+"\n" +
+"***\n" +
+"\n" +
+"这也是为什么我写这几本小册子。\n" +
+"\n" +
+"不是为了改造世界，而是为了理解世界。理解了 $F_{damage}$，你就理解了为什么技术进步有时带来繁荣，有时带来灾难。\n" +
+"\n" +
+"你也就能理解，真正需要改变的从来不是工具，而是驾驭工具的那个结构。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"## 不过我们只有一条思考问题的主线：从人的生物性到社会性\n" +
+"\n" +
+"说到\"理解世界\"，Fdamage只是我的三本书中的第一本。\n" +
+"\n" +
+"这三本书，各自从不同的维度，追问同一个古老的问题：\n" +
+"\n" +
+"<br />\n" +
+"\n" +
+"> **\"人啊，认识你自己。\"**\n" +
+"\n" +
+"<br />\n" +
+"\n" +
+"我们的认知框架，建立在一条简洁而有力的逻辑链上：\n" +
+"\n" +
+"**意识 → 精神障碍 → 经济与社会**\n" +
+"\n" +
+"这条链的起点是人的生物性本质。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"意识不是超自然的神秘现象，而是几十亿年生命能动性进化的结果——从单细胞的趋利避害，到神经系统的信号传递，到大脑的结构复杂而产生的智能涌现，再到人类独有的反思性意识。这就是《意识之生命能动性的结构进化范式导论》所阐述的核心。\n" +
+"\n" +
+"精神障碍，则是这条进化链上的\"脆弱性暴露\"。当遗传突变、发育异常、代谢失衡和社会环境压力在四层互作中突破代偿阈值，精神障碍就发生了。它不是\"想不开\"，不是\"意志薄弱\"，更不是\"道德缺陷\"——它是生物性在特定条件下的必然表达。这是《精神障碍之遗传突变发育代谢及社会环境因素互作原理》所阐述的核心。\n" +
+"\n" +
+"经济与社会，则是人的意识，包括精神障碍的宏观环境容器。$F_{damage}$函数揭示了种内结构与工具水平的耦合张力如何制造损耗，而这种损耗最终以精神健康为代价被个体承受。当$W$（个体实际留存）逼近$L$（生存红线），$F_{damage}$趋向无穷大，精神障碍便不是个人问题，而是系统性问题。这是《价格损益因子》所揭示的核心。\n" +
+"\n" +
+"三个小册子，三个层面：**社会**、**意识**、**神经**。它们共同构成一个从外到内、从群体到个体的理解图谱。\n" +
+"\n" +
+"- **《$F_{damage}$：价格损益因子理论》**：理解**人与社会及历史**——为什么同样的技术进步，在某些社会带来繁荣，在另一些社会却带来灾难？答案不在技术本身，而在种内结构。\n" +
+"- **《意识之生命能动性的结构进化范式导论》**：理解**人自身的想法的起源**——意识不是神秘的灵魂，而是生命在进化过程中形成的、处理内外信息的结构性功能。这本书把\"我为什么会这样想\"这个问题，从哲学思辨拉回了生物学的可解释框架。\n" +
+"- **《精神障碍之遗传突变发育代谢及社会环境因素互作原理》**：构建科学地认识**人的神经中枢与神经代谢及心理与行为**的生理基础——当结构出现故障，意识如何失调？行为如何异常？这本书建立了一个从遗传突变到社会环境的四层互作解释框架。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"## 未经理解就去改造，本身就是一种傲慢的暴力\n" +
+"\n" +
+"我没有野心去\"改造\"任何东西。改造世界的冲动，往往建立在对世界一知半解的基础上。\n" +
+"\n" +
+"苏格拉底说\"未经审视的人生不值得过\"不过Julian后来给了苏格拉底一记重击，他说，同学们，苏格拉底口中的\"人\"是不含数以百万计的\"奴隶\"的！\n" +
+"\n" +
+"一部《24史》，就是一部《消失的牠》。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"重复一遍：\n" +
+"\n" +
+"**未经理解就去改造，本身就是一种傲慢的暴力。**\n" +
+"\n" +
+"特别是，对于社会结构的随意改造，那是权力的傲慢。\n" +
+"\n" +
+"所以这三本小册子，最基本的诉求都只是提供一种更加优雅的理解世界与人的框架。\n" +
+"\n" +
+"理解我们身处其中的社会结构如何塑造价格、分配财富、决定命运。\n" +
+"理解我们头脑中的想法从何而来，为何如此运作。\n" +
+"理解当神经结构与代谢失调，实际上每个人的神经结构天然都是失调的，只是失调的程度呈某种所谓正态分布罢了，人为什么会痛苦、会疯狂、会失去自我。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"**重要的是理解世界，而不是改造世界。**\n" +
+"\n" +
+"因为只有理解了，改造才有可能不变成破坏。\n" +
+"\n" +
+"而很多时候，理解了之后你会发现，根本不需要改造——需要改变的只是\"你自己看世界的方式\"，前提是你有足够的UBI够你生活和去看世界，同学。不要被那些傻逼专家的毒鸡汤骗了，世界那么大，有钱走遍天下，无钱寸步难行。\n" +
+"\n" +
+"当然，有时候即使有钱你也动不了，你还得有介绍信，路引，招待所票，饭票，两票，肉票……\n" +
+"\n" +
+"这就是这三个小册子的全部目的。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"回到理解世界的力量本源，人的意识，我们用同样的\"生物学底层原理解构复杂假说\"的思路，又一次击溃了所有的\"意识假说\"，形成了我们独有的科学的《意识之生命能动性的结构进化范式》，解决了意识起源与本质的迷思。\n" +
+"\n" +
+"而它的\"思想涌现切口\"，却都是基于\"人的生物性\"，\"人类的生物性\"，以进化与种内结构这种简单却坚固有穿透力的\"巨人们的洞见\"来推理和演绎，后者则是400多年前的科学哲学先驱培根在《新工具》里教我们的基本的驭使我们神经中枢的工具。\n" +
+"\n" +
+"然后就像我在和AI讨论大模型算法的时候我说到了：\n" +
+"\n" +
+"我觉得也许我们根本造不出\"足够拟人\"的AGI，或者ASI，或者ATHI，但是这不和我们造不出鸟形飞机但是我们造得出\"黑鸟\"一样吗？所以炒作AGI根本就是捞钱的商业策略，大家都很清楚，我们并不知道，至少再有限的时空范围内，我们并不会知道\"类人神经网络\"真的比较完整的工作机制。\n" +
+"\n" +
+"虽然现在的机器学习算法名称为神经网络算法，但这只是当初他们发明这种\"统计分类器程序\"的时候的一种名词映射。神经网络算法根本和人类神经网络，连接组，神经中枢，皮质，灰质，白质，感觉神经，运动神经，不说根本不想，而且是毫无瓜葛。\n" +
+"\n" +
+"人类的神经网络有中断机制，有遗忘，和递归升级压缩，真正的understanding，有对抗思辨，还有不受控的\"意识流或者说灵感\"，那些显然来自神经突触和神经递质代谢本身的\"代谢波动\"和\"多路传网络\"和神经元多核心的\"谐振\"。\n" +
+"\n" +
+"所以我觉得硅基取代碳基，从哲学上是不可能的；但是从工具论上是完全可以的；但是那不正是我们追求的目标吗？\n" +
+"\n" +
+"人类少干活，多享受，多处于产生\"意识流\"的时间，而不是禁锢在996的打螺丝福报。\n" +
+"\n" +
+"我2025年在ADP上发表的《意识的生命能动性之结构进化范式》这本小册子，它界定的人类的\"意识\"，已经是几十亿年生命能动性的进化结果，硅基在结构和能效机制上要模仿这种意识，显然需要人类自身\"意识\"的突破，因为硅基毕竟是人类意识创造物。\n" +
+"\n" +
+"造物主创造了世界，big bang演绎了宇宙，宇宙的演绎创生了人类，人类的意识演绎创生了硅基，硅基突破人类意识的禁锢？创造硅基意识？\n" +
+"\n" +
+"我觉得，哈哈，各位到处鼓吹所谓硅基意识的人，你们是买了大模型公司的股票吧？\n" +
+"\n" +
+"***\n" +
+"\n" +
+"我想这大概就是我的总的understanding的框架。从人的生物性本质，意识的进化历程，脑子作为中枢神经系统，以及人类作为一个特有的生物种类与特有的种内结构，它们形成了一个完善的理解我们的行为和经济和历史的简洁而有力的总体认知框架。\n" +
+"\n" +
+"正如我们在考虑进化的时候，我们要把\"环境选择\"放在最终的生杀予夺的暴力的位置，而我们审视\"人生\"的时候，要把\"社会环境\"放在最终的生杀予夺的暴力的位置。\n" +
+"\n" +
+"而这个认知框架有可以分为三个：\n" +
+"\n" +
+"意识；\n" +
+"\n" +
+"精神障碍；\n" +
+"\n" +
+"经济与社会。\n" +
+"\n" +
+"***\n" +
+"\n" +
+"## 声明：人机共创作\n" +
+"\n" +
+"这三本小册子均包含大量AI共创作内容。\n" +
+"\n" +
+"具体而言，人类作者负责：核心理论框架的提出与论证、全书结构与逻辑链的设计、关键判断与立场的抉择、以及最终的审校定稿。AI负责：文献检索与综述、学术细节的补充与验证、章节初稿的生成与扩展、以及格式与语言的一致性打磨。\n" +
+"\n" +
+"这不是\"AI写的\"，也不是\"纯人写的\"——这是一种新的知识生产方式：人类提供方向、判断和最终责任，AI提供执行力、覆盖面和效率。正如这三本书所论述的，工具本身不创造价值，价值取决于驾驭工具的结构。\n" +
+"\n" +
+"我们选择坦诚，而非隐瞒。";
+
+        document.getElementById('preface-content').innerHTML = marked.parse(prefaceRaw);
+    </script>
+</body>
+</html>
